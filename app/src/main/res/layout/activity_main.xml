@@ -14,12 +14,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-<!--        <include layout="@layout/layout_personal_info"/>
-       <include layout="@layout/layout_selection_criteria"/>
-        <include layout="@layout/layout_household_info"/>-->
+        <include layout="@layout/layout_personal_info"/>
+        <include layout="@layout/layout_selection_criteria"/>
+        <include layout="@layout/layout_household_info"/>
 
-
-        <include layout="@layout/layout_nominee"/>
+<!--
+        <include layout="@layout/layout_nominee"/>-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
