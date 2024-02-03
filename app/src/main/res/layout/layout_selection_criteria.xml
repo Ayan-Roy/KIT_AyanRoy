@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingStart="20dp"
-            android:text="Household Information"
+            android:text="Selection Criteria"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -33,19 +33,25 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/TextInputLayoutStyle"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="7dp"
+            android:layout_marginEnd="7dp"
             android:layout_weight="3"
-            android:hint="Household Main Source of Income">
+            android:hint="Household Main Source of Income"
+            android:layout_gravity="bottom"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="2dp"
+            app:hintTextColor="@color/black">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="none"
+                android:id="@+id/tv_sCriteria_cmb_src_of_income"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
+
 
 
         <LinearLayout
@@ -68,6 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:id="@+id/tv_sCriteria_avg_income"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,6 +94,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none"
+                    android:id="@+id/tv_sCriteria_cmb_currency"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,13 +126,13 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radio_button1"
+                    android:id="@+id/rBtn_sType_public"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Public Works" />
 
                 <RadioButton
-                    android:id="@+id/radio_button2"
+                    android:id="@+id/rBtn_sType_direct"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -148,16 +156,19 @@
         android:weightSum="3">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtLayout_specificIncome"
             style="@style/TextInputLayoutStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
+            android:visibility="gone"
             android:hint="Specify the household main source of Income">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/tv_sCriteria_specific_income_src"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -176,6 +187,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
+                android:id="@+id/tv_sCriteria_cmb_reason"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -206,6 +218,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
+                android:id="@+id/tv_sCriteria_state_name"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -226,6 +239,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
+                android:id="@+id/tv_sCriteria_country_name"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -244,6 +258,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
+                android:id="@+id/tv_sCriteria_payam_name"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -274,6 +289,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
+                android:id="@+id/tv_sCriteria_boma_name"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -290,6 +306,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:editable="false"
+                android:id="@+id/tv_sCriteria_gps_lat"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -305,6 +322,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:editable="false"
+                android:id="@+id/tv_sCriteria_gps_long"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 

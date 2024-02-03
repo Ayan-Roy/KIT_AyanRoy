@@ -17,8 +17,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,15 +29,28 @@ public class FragmentPersonalInfo extends Fragment {
 
 
     LinearLayout layoutSpouseInfo;
+
+    TextInputLayout layoutSpecificIncome;
     TextInputEditText tvResFName, tvResMName, tvResLName, tvResAge, tvResId, tvResPhone,
-            tvSpouseFName, tvSpouseMName, tvSpouseLName;
-    AutoCompleteTextView cmbResRelationToHead, cmbResGender, cmbResMaritalSts, cmbResLegalSts;
+            tvSpouseFName, tvSpouseMName, tvSpouseLName, tvSpecificIncomeSrc, tvAvgIncome, tvGpsLat, tvGpsLong;
+    AutoCompleteTextView cmbResRelationToHead, cmbResGender, cmbResMaritalSts, cmbResLegalSts, cmbMainIncomeSource,
+            cmbCurrency, cmbReason, cmbState, cmbCountry, cmbPayam, cmbBoma;
+
+    RadioButton supportType_public, supportType_direct;
     Context context;
 
     ArrayList<String> listResRelationship;
     ArrayList<String> listResGender;
     ArrayList<String> listResMaritalSts;
     ArrayList<String> listLegalSts;
+    ArrayList<String> listIncomeSrc;
+    ArrayList<String> listCurrency;
+    ArrayList<String> listReason_public;
+    ArrayList<String> listReason_direct;
+    ArrayList<String> listState;
+    ArrayList<String> listCountry;
+    ArrayList<String> listPayam;
+    ArrayList<String> listBoma;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +59,8 @@ public class FragmentPersonalInfo extends Fragment {
         View view = inflater.inflate(R.layout.fragment_personal_info, container, false);
 
         context = getContext();
+
+        /**     Hooks for Personal Info     */
         tvResFName = view.findViewById(R.id.tv_pInfo_fName);
         tvResMName = view.findViewById(R.id.tv_pInfo_mName);
         tvResLName = view.findViewById(R.id.tv_pInfo_lName);
@@ -62,6 +79,26 @@ public class FragmentPersonalInfo extends Fragment {
 
         layoutSpouseInfo = view.findViewById(R.id.layout_marital_sts_married);
 
+
+        /**     Hooks for Household Info     */
+        tvSpecificIncomeSrc = view.findViewById(R.id.tv_sCriteria_specific_income_src);
+        tvAvgIncome = view.findViewById(R.id.tv_sCriteria_avg_income);
+        tvGpsLat = view.findViewById(R.id.tv_sCriteria_gps_lat);
+        tvGpsLong = view.findViewById(R.id.tv_sCriteria_gps_long);
+
+        cmbMainIncomeSource = view.findViewById(R.id.tv_sCriteria_cmb_src_of_income);
+        cmbCurrency = view.findViewById(R.id.tv_sCriteria_cmb_currency);
+        cmbReason = view.findViewById(R.id.tv_sCriteria_cmb_reason);
+        cmbState = view.findViewById(R.id.tv_sCriteria_state_name);
+        cmbCountry = view.findViewById(R.id.tv_sCriteria_country_name);
+        cmbPayam = view.findViewById(R.id.tv_sCriteria_payam_name);
+        cmbBoma = view.findViewById(R.id.tv_sCriteria_boma_name);
+
+        supportType_public = view.findViewById(R.id.rBtn_sType_public);
+        supportType_direct = view.findViewById(R.id.rBtn_sType_direct);
+
+        layoutSpecificIncome = view.findViewById(R.id.txtLayout_specificIncome);
+
         cmdDataInit();
 
 
@@ -69,6 +106,9 @@ public class FragmentPersonalInfo extends Fragment {
         initComboBox(cmbResGender, listResGender);
         initComboBox(cmbResMaritalSts, listResMaritalSts);
         initComboBox(cmbResLegalSts, listLegalSts);
+        initComboBox(cmbMainIncomeSource, listIncomeSrc);
+        initComboBox(cmbCurrency, listCurrency);
+        initComboBox(cmbState, listState);
 
 
         setActionListener();
@@ -81,21 +121,75 @@ public class FragmentPersonalInfo extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-
     }
 
     private void setActionListener() {
 
-        Log.e(TAG, "setActionListener: " );
+        Log.e(TAG, "setActionListener: ");
         cmbResMaritalSts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.e(TAG, "onItemSelected: " );
-                if(position == 2){
+                if (position == 2) {
                     layoutSpouseInfo.setVisibility(View.VISIBLE);
-                }else{
-                    if(layoutSpouseInfo.getVisibility() == View.VISIBLE)
+                } else {
+                    if (layoutSpouseInfo.getVisibility() == View.VISIBLE)
                         layoutSpouseInfo.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        cmbMainIncomeSource.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 11) {
+                    layoutSpecificIncome.setVisibility(View.VISIBLE);
+                } else {
+                    if (layoutSpecificIncome.getVisibility() == View.VISIBLE)
+                        layoutSpecificIncome.setVisibility(View.GONE);
+                }
+            }
+        });
+
+        supportType_public.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                supportType_direct.setSelected(false);
+                initComboBox(cmbReason, listReason_public);
+            }
+        });
+
+        supportType_direct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                supportType_public.setSelected(false);
+                initComboBox(cmbReason, listReason_direct);
+            }
+        });
+
+        cmbState.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position!=0){
+                    initComboBox(cmbCountry, listCountry);
+                }
+            }
+        });
+
+        cmbCountry.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position!=0){
+                    initComboBox(cmbPayam, listPayam);
+                }
+            }
+        });
+
+        cmbPayam.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position!=0){
+                    initComboBox(cmbBoma, listBoma);
                 }
             }
         });
@@ -138,6 +232,81 @@ public class FragmentPersonalInfo extends Fragment {
                 "IDP",
                 "Migrant Worker"));
 
+        listIncomeSrc = new ArrayList<>(Arrays.asList("Select Household Main Source of Income",
+                "None",
+                "Selling of farm produce including crops and livestock, fishing",
+                "Selling of non-farm goods (e.g. tea, fire wood, charcoal, grass, alcohol)",
+                "Casual labour",
+                "Formal employment",
+                "Remittances",
+                "Gift from family/ friends",
+                "Assistance from the Government",
+                "Assistance from NGOs/charitable organization/church/mosque",
+                "Pension",
+                "Other (specify)"));
+
+        listCurrency = new ArrayList<>(Arrays.asList("Currency",
+                "Sudanese Pound",
+                "USD",
+                "Pound",
+                "Euro"));
+        listReason_public = new ArrayList<>(Arrays.asList("Select Selection Reason",
+                "Poor household with no sufficient income to sustain the household",
+                "Household contain able bodied youth member (18-35)",
+                "Household headed by young men and women between the ages of 18 and 35",
+                "Many members who are dependents (HH with dependants greater than 3)",
+                "Poor household which have persons with severe disabilities"));
+
+        listReason_direct = new ArrayList<>(Arrays.asList("Select Selection Reason",
+                "Child headed households with no alternate income support",
+                "Elderly headed household lacking alternate income support and able bodied member",
+                "Persons with disability headed household lacking alternate income support and able bodied member",
+                "Chronically ill headed household lacking alternate income and able bodied member",
+                "Female headed household lacking alternate income support and able-bodied member"));
+        listState = new ArrayList<>(Arrays.asList("Select State",
+                "UPPER NILE",
+                "JONGLEI",
+                "UNITY WARRAP",
+                "NORTHERN BAHR EL GHAZAL",
+                "WESTERN BAHR EL GHAZAL",
+                "LAKES",
+                "WESTERN EQUATORIA",
+                "CENTRAL EQUATORIA",
+                "EASTERN EQUATORIA"));
+
+        listCountry = new ArrayList<>(Arrays.asList("Courtya Select County",
+                "Select County FANGAK",
+                "KHORFLUS",
+                "AYOD",
+                "DUK",
+                "UROR",
+                "NYROL",
+                "АКОВО",
+                "POCHALLA PBOR",
+                "TWIC EAST",
+                "BOR SOUTH",
+                "RENK",
+                "MANVO",
+                "FASHODA",
+                "MELUTH",
+                "MABAN",
+                "MAWUT",
+                "LUAKPINY",
+                "LONGOCHUK"));
+
+        listPayam = new ArrayList<>(Arrays.asList("Select Payam",
+                "Select Payam CHAMMEDI",
+                "GERGER",
+                "JALHAK",
+                "NORTH RENK",
+                "SOUTH RENK"));
+
+        listPayam = new ArrayList<>(Arrays.asList("Select Boma",
+                "BABANIS",
+                "HBOUBDIT",
+                "CHAMMEDI",
+                "LABIOR",
+                "Norm"));
 
 
     }

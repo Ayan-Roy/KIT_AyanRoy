@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingStart="20dp"
-            android:text="Selection Criteria"
+            android:text="Household Information"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
