@@ -1079,11 +1079,12 @@
             android:weightSum="3">
 
             <LinearLayout
+                android:layout_gravity="center"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
                 android:layout_weight="1"
                 android:layout_marginEnd="7dp"
+                android:layout_marginTop="2dp"
                 android:background="@drawable/bg_outline_layout"
                 android:orientation="vertical"
                 android:padding="5dp">
@@ -1123,7 +1124,6 @@
                 style="@style/TextInputLayoutStyle"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_gravity="bottom"
                 android:hint="Not including yourself, how many other members of your household are between 18 and 35 and can read and write ?"
                 android:layout_weight="2"
                 android:padding="3dp">
