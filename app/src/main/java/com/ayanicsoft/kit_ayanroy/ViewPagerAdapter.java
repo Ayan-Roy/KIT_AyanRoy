@@ -19,7 +19,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        if (position == 1){
+        if (position == 0){
             return new FragmentPersonalInfo();
         }
         return new FragmentNomineeInfo();

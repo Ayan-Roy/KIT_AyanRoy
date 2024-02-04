@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.google.android.material.button.MaterialButton;
+
 public class MainActivity extends AppCompatActivity {
 
-    LinearLayout btnNext;
+    LinearLayout btnNext, btnPrevious;
+    MaterialButton btnClearAll;
     ViewPager2 mainViewPager;
     private ViewPagerAdapter adapter;
 
@@ -21,27 +24,34 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnNext = findViewById(R.id.btn_next);
+        btnPrevious = findViewById(R.id.btn_previous);
+        btnClearAll = findViewById(R.id.btn_clear_all);
         mainViewPager = findViewById(R.id.main_viewPager);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         adapter = new ViewPagerAdapter(fragmentManager, getLifecycle());
         mainViewPager.setAdapter(adapter);
 
-        mainViewPager.setCurrentItem(1);
+        mainViewPager.setCurrentItem(0);
+        mainViewPager.setUserInputEnabled(false);
 
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int currentFragment = mainViewPager.getCurrentItem();
-                if(currentFragment == 1){
-                    mainViewPager.setCurrentItem(0);
-                }else{
+                if(mainViewPager.getCurrentItem() == 0){
                     mainViewPager.setCurrentItem(1);
+                    btnPrevious.setVisibility(View.VISIBLE);
                 }
             }
         });
-
+        btnPrevious.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainViewPager.setCurrentItem(0);
+                btnPrevious.setVisibility(View.INVISIBLE);
+            }
+        });
 
         mainViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override

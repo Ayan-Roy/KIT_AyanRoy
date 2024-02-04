@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -36,6 +39,8 @@ public class FragmentPersonalInfo extends Fragment {
     AutoCompleteTextView cmbResRelationToHead, cmbResGender, cmbResMaritalSts, cmbResLegalSts, cmbMainIncomeSource,
             cmbCurrency, cmbReason, cmbState, cmbCountry, cmbPayam, cmbBoma;
 
+    TextView tvTotalMember;
+
     RadioButton supportType_public, supportType_direct;
     Context context;
 
@@ -51,6 +56,7 @@ public class FragmentPersonalInfo extends Fragment {
     ArrayList<String> listCountry;
     ArrayList<String> listPayam;
     ArrayList<String> listBoma;
+    ArrayList<TextInputEditText> listHouseSize;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -80,7 +86,7 @@ public class FragmentPersonalInfo extends Fragment {
         layoutSpouseInfo = view.findViewById(R.id.layout_marital_sts_married);
 
 
-        /**     Hooks for Household Info     */
+        /**     Hooks for Selection Info     */
         tvSpecificIncomeSrc = view.findViewById(R.id.tv_sCriteria_specific_income_src);
         tvAvgIncome = view.findViewById(R.id.tv_sCriteria_avg_income);
         tvGpsLat = view.findViewById(R.id.tv_sCriteria_gps_lat);
@@ -97,7 +103,21 @@ public class FragmentPersonalInfo extends Fragment {
         supportType_public = view.findViewById(R.id.rBtn_sType_public);
         supportType_direct = view.findViewById(R.id.rBtn_sType_direct);
 
+        tvTotalMember = view.findViewById(R.id.tv_ttl_member);
+
         layoutSpecificIncome = view.findViewById(R.id.txtLayout_specificIncome);
+
+
+        /**     Hooks for Selection Info     */
+        // Add EditText fields to the list
+        listHouseSize = new ArrayList<>();
+        for (int i = 1; i <= 36; i++) {
+            int editTextId = getResources().getIdentifier("editText" + i, "id", context.getPackageName());
+            TextInputEditText editText = view.findViewById(editTextId);
+            listHouseSize.add(editText);
+        }
+
+
 
         cmdDataInit();
 
@@ -113,6 +133,35 @@ public class FragmentPersonalInfo extends Fragment {
 
         setActionListener();
         return view;
+    }
+
+    private void houseHoleTableCellListener(TextInputEditText editText) {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Update sum when text changes
+                calculateSum();
+            }
+        });
+    }
+
+    private void calculateSum() {
+       int  totalSum = 1;
+        for (TextInputEditText editText : listHouseSize) {
+            String valueStr = editText.getText().toString();
+            if (!valueStr.isEmpty()) {
+                int value = Integer.parseInt(valueStr);
+                totalSum += value;
+            }
+        }
+        // Update TextView with the sum
+        tvTotalMember.setText(""+totalSum);
     }
 
 
@@ -193,7 +242,6 @@ public class FragmentPersonalInfo extends Fragment {
                 }
             }
         });
-
 
     }
 

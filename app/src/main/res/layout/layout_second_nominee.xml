@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/white"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
 
     <LinearLayout
@@ -12,6 +12,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:background="#F8F8F8">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -40,6 +41,7 @@
             android:hint="Nominee First Name">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_n2_fName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black" />
@@ -56,6 +58,7 @@
             android:hint="Nominee Middle Name">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_n2_mName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black" />
@@ -72,6 +75,7 @@
             android:hint="Nominee Last Name">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_n2_lName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black" />
@@ -94,15 +98,16 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:layout_marginEnd="7dp"
             android:layout_weight="1"
-            android:layout_gravity="bottom"
             android:hint="Respondent relationship to the household head"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/black">
 
             <AutoCompleteTextView
+                android:id="@+id/cmb_n2_relationship"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
@@ -121,6 +126,7 @@
             android:hint="Nominee Age">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_n2_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -131,15 +137,16 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:layout_marginStart="7dp"
             android:layout_weight="1"
             android:hint="Nominee Gender"
             app:boxStrokeColor="@color/black"
-            android:layout_gravity="bottom"
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/black">
 
             <AutoCompleteTextView
+                android:id="@+id/cmb_n2_gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
@@ -150,24 +157,24 @@
     </LinearLayout>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:weightSum="3"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="3">
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_outline_layout"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:padding="5dp"
             android:layout_marginEnd="14dp"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:background="@drawable/bg_outline_layout"
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -184,13 +191,13 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radio_button1"
+                    android:id="@+id/btn_n2_write_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes" />
 
                 <RadioButton
-                    android:id="@+id/radio_button2"
+                    android:id="@+id/btn_n2_write_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -202,26 +209,45 @@
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="14dp"
+            android:layout_weight="1"
+            android:hint="What does currently do for a living?"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="2dp"
+            app:hintTextColor="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/cmb_n2_occupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_n2_other_occupation"
             style="@style/TextInputLayoutStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="14dp"
             android:layout_weight="1"
-            android:hint="What does currently do for a living?">
+            android:visibility="gone"
+            android:hint="Other Occupation">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_n2_other_occupation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
     </LinearLayout>
-
-
 
 
 </LinearLayout>

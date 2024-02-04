@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <LinearLayout
@@ -22,18 +22,19 @@
             android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
 
         <TableLayout
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="@drawable/table_border"
-            android:padding="0.5dp"
-            android:layout_height="wrap_content">
+            android:padding="0.5dp">
 
             <!--Header-->
             <TableRow
@@ -173,12 +174,12 @@
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_weight="1"
+                    android:background="@drawable/border_right_and_bottom"
+                    android:gravity="center"
                     android:text="0-2 yrs Old"
-                    android:gravity="center"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:background="@drawable/border_right_and_bottom" />
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
@@ -190,49 +191,55 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText0"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
+
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -248,55 +255,61 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="65dp">
@@ -305,12 +318,12 @@
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_weight="1"
+                    android:background="@drawable/border_right_and_bottom"
+                    android:gravity="center"
                     android:text="3-5 yrs Old"
-                    android:gravity="center"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:background="@drawable/border_right_and_bottom" />
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
@@ -322,49 +335,54 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -380,55 +398,61 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText9"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText10"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText11"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="65dp">
@@ -437,12 +461,12 @@
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_weight="1"
+                    android:background="@drawable/border_right_and_bottom"
+                    android:gravity="center"
                     android:text="6-17 yrs Old"
-                    android:gravity="center"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:background="@drawable/border_right_and_bottom" />
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
@@ -454,49 +478,54 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText12"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText13"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
+                            android:id="@+id/editText14"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -512,55 +541,61 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText15"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText16"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText17"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="65dp">
@@ -569,12 +604,12 @@
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_weight="1"
+                    android:background="@drawable/border_right_and_bottom"
+                    android:gravity="center"
                     android:text="18-35 yrs Old	"
-                    android:gravity="center"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:background="@drawable/border_right_and_bottom" />
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
@@ -586,49 +621,54 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText18"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
+                            android:id="@+id/editText19"
+                            android:layout_width="180dp"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
+                            android:id="@+id/editText20"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -644,55 +684,61 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText21"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText22"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText23"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="65dp">
@@ -701,12 +747,12 @@
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_weight="1"
+                    android:background="@drawable/border_right_and_bottom"
+                    android:gravity="center"
                     android:text="36-64 yrs Old	"
-                    android:gravity="center"
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:background="@drawable/border_right_and_bottom" />
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
@@ -718,49 +764,55 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText24"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:id="@+id/editText25"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/editText4"
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:id="@+id/editText26"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -776,55 +828,61 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText27"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText28"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText29"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="65dp">
@@ -833,12 +891,12 @@
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_weight="1"
-                    android:text="65 yrs and Above"
+                    android:background="@drawable/border_right_and_bottom"
                     android:gravity="center"
-                    android:textStyle="bold"
+                    android:text="65 yrs and Above"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    android:background="@drawable/border_right_and_bottom" />
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
@@ -850,49 +908,54 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText30"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:id="@+id/editText31"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText32"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -908,97 +971,102 @@
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText33"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText34"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
-                        android:padding="3dp"
-                        android:layout_gravity="top"
                         android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_weight="1"
                         android:background="@drawable/border_right_and_bottom"
-                        android:layout_weight="1">
+                        android:padding="3dp">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/editText35"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:inputType="number"
                             android:gravity="center"
+                            android:inputType="number"
                             android:textColor="@color/black" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
 
             </TableRow>
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="65dp">
-
 
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="65dp"
                     android:layout_weight="6.60"
+                    android:background="@drawable/border_right_and_bottom"
+                    android:gravity="center"
+                    android:paddingEnd="10dp"
                     android:text="Household Size (including yourself)"
-                    android:textStyle="bold"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
-                    android:paddingEnd="10dp"
-                    android:gravity="center"
                     android:textSize="14sp"
-                    android:background="@drawable/border_right_and_bottom" />
+                    android:textStyle="bold" />
 
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="65dp"
-                    android:background="@drawable/border_right_and_bottom"
-                    android:layout_weight="1.1">
+                    android:layout_weight="1.1"
+                    android:background="@drawable/border_right_and_bottom">
 
 
                     <TextView
+                        android:id="@+id/tv_ttl_member"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text=""
-                        android:gravity="center"
                         android:layout_margin="7dp"
-                        android:textStyle="bold"
+                        android:background="@drawable/bg_gray_box"
+                        android:gravity="center"
+                        android:text="1"
                         android:textColor="@color/black"
-                        android:textSize="14sp"
-                        android:background="@drawable/bg_gray_box" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
 
             </TableRow>
-
 
 
         </TableLayout>
@@ -1016,9 +1084,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
-                android:padding="5dp"
                 android:background="@drawable/bg_outline_layout"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -1048,16 +1116,17 @@
 
 
             </LinearLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_gravity="bottom"
                 android:layout_marginStart="15dp"
+                android:layout_weight="2"
                 android:hint="Not including yourself, how many other members of your household are between 18 and 35 and can read and write ?"
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidth="2dp"
-                android:layout_gravity="bottom"
                 app:hintTextColor="@color/black">
 
                 <AutoCompleteTextView
@@ -1068,12 +1137,9 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-
         </LinearLayout>
 
     </LinearLayout>
-
-
 
 
 </LinearLayout>

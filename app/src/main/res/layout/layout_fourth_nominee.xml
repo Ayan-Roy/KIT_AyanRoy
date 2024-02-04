@@ -25,6 +25,7 @@
             android:textStyle="bold" />
 
         <ImageView
+            android:id="@+id/btn_n4_close"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_gravity="center"
@@ -49,6 +50,7 @@
             android:hint="Nominee Name">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_n4_Name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black" />
@@ -68,6 +70,7 @@
             app:hintTextColor="@color/black">
 
             <AutoCompleteTextView
+                android:id="@+id/cmb_n4_relationship"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
@@ -86,6 +89,7 @@
             android:hint="Nominee Age">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_n4_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
@@ -108,15 +112,16 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="7dp"
             android:layout_weight="1"
             android:hint="Nominee Gender"
-            android:layout_marginEnd="7dp"
-            android:layout_gravity="bottom"
             app:boxStrokeColor="@color/black"
             app:boxStrokeWidth="2dp"
             app:hintTextColor="@color/black">
 
             <AutoCompleteTextView
+                android:id="@+id/cmb_n4_gender"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none"
@@ -126,13 +131,13 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_outline_layout"
             android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:layout_marginEnd="7dp"
             android:layout_marginStart="7dp"
-            android:orientation="vertical">
+            android:layout_marginEnd="7dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_outline_layout"
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -143,19 +148,18 @@
                 android:textStyle="normal" />
 
             <LinearLayout
-                android:id="@+id/radio_group_container"
                 android:layout_width="match_parent"
                 android:layout_height="27dp"
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/radio_button1"
+                    android:id="@+id/btn_n4_write_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Yes" />
 
                 <RadioButton
-                    android:id="@+id/radio_button2"
+                    android:id="@+id/btn_n4_write_no"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
@@ -168,21 +172,56 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_weight="1"
+            android:hint="What does currently do for a living?"
+            app:boxStrokeColor="@color/black"
+            app:boxStrokeWidth="2dp"
+            app:hintTextColor="@color/black">
+
+            <AutoCompleteTextView
+                android:id="@+id/cmb_n4_occupation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_n4_other_occupation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:paddingEnd="10dp"
+        android:visibility="gone"
+        android:weightSum="3">
+
+
+        <com.google.android.material.textfield.TextInputLayout
             style="@style/TextInputLayoutStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="7dp"
-            android:layout_marginEnd="7dp"
             android:layout_weight="1"
-            android:hint="What does currently do for a living?">
+            android:hint="What does currently do for a living?"
+            android:paddingEnd="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tv_n4_other_occupation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
-
 
     </LinearLayout>
 

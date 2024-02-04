@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".FragmentNomineeInfo"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".FragmentNomineeInfo">
 
 
     <LinearLayout
@@ -19,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:layout_marginStart="10dp"
+            android:weightSum="3"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
             android:paddingEnd="10dp">
@@ -27,11 +28,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:padding="5dp"
                 android:layout_marginStart="1dp"
-                android:background="@drawable/bg_outline_layout"
                 android:layout_weight="2"
-                android:orientation="vertical">
+                android:background="@drawable/bg_outline_layout"
+                android:orientation="vertical"
+                android:padding="5dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -48,13 +49,13 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radio_button1"
+                        android:id="@+id/btn_include_nominee_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
-                        android:id="@+id/radio_button2"
+                        android:id="@+id/btn_include_nominee_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -66,10 +67,8 @@
             </LinearLayout>
 
 
-
-
-
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_why_not"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -78,13 +77,16 @@
                 android:layout_weight="1"
                 android:hint="Why Not?"
                 app:boxStrokeColor="@color/black"
+                android:visibility="gone"
                 app:boxStrokeWidth="2dp"
                 app:hintTextColor="@color/black">
 
                 <AutoCompleteTextView
+                    android:id="@+id/tv_why_not"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="none"
+                    android:maxLines="1"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,13 +94,15 @@
 
 
         <LinearLayout
+            android:id="@+id/layout_specific_reason"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="4"
-            android:paddingEnd="7dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingEnd="7dp"
+            android:visibility="gone"
+            android:weightSum="4">
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/TextInputLayoutStyle"
@@ -110,6 +114,7 @@
                 android:hint="Specify the reason">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tv_specific_reason"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black" />
@@ -118,40 +123,52 @@
         </LinearLayout>
 
 
-        <include layout="@layout/layout_first_nominee"/>
-        <include layout="@layout/layout_second_nominee"/>
-        <include layout="@layout/layout_third_nominee"/>
-        <include layout="@layout/layout_fourth_nominee"/>
-        <include layout="@layout/layout_fifth_nominee"/>
+        <include
+            android:id="@+id/layout_nominee_1"
+            layout="@layout/layout_first_nominee"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layout_nominee_2"
+            layout="@layout/layout_second_nominee"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layout_nominee_3"
+            layout="@layout/layout_third_nominee"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layout_nominee_4"
+            layout="@layout/layout_fourth_nominee"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/layout_nominee_5"
+            layout="@layout/layout_fifth_nominee"
+            android:visibility="gone" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_send_default_email"
+            android:id="@+id/btn_add_more_nominee"
             android:layout_width="400dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="end"
             android:layout_margin="5dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="25dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="sans-serif"
             android:text="Would you like to nominate someone else?"
-            android:layout_gravity="end"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="18sp"
+            android:visibility="gone"
             app:backgroundTint="#FFCA2C"
             app:cornerRadius="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </LinearLayout>
-
-
-
-
-
-
-
-
 
 
 </ScrollView>
