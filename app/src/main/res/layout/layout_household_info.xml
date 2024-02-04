@@ -1083,6 +1083,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
+                android:layout_marginEnd="7dp"
                 android:background="@drawable/bg_outline_layout"
                 android:orientation="vertical"
                 android:padding="5dp">
@@ -1101,11 +1102,13 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+                        android:id="@+id/rbtn_read_write_yes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Yes" />
 
                     <RadioButton
+                        android:id="@+id/rbtn_read_write_no"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
@@ -1117,21 +1120,19 @@
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                style="@style/TextInputLayoutStyle"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="bottom"
-                android:layout_marginStart="15dp"
-                android:layout_weight="2"
                 android:hint="Not including yourself, how many other members of your household are between 18 and 35 and can read and write ?"
-                app:boxStrokeColor="@color/black"
-                app:boxStrokeWidth="2dp"
-                app:hintTextColor="@color/black">
+                android:layout_weight="2"
+                android:padding="3dp">
 
-                <AutoCompleteTextView
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
+                    android:gravity="center"
+                    android:inputType="number"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 

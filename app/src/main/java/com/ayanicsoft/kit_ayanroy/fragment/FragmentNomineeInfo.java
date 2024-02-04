@@ -59,6 +59,7 @@ public class FragmentNomineeInfo extends Fragment {
     ArrayList<String> listNomineeOccupation;
     Context context;
     private static int numOfNominee = 0;
+    private static boolean hasNominee = false;
 
 
     @Override
@@ -172,6 +173,7 @@ public class FragmentNomineeInfo extends Fragment {
                 btnAddMoreNominee.setVisibility(View.GONE);
 
                 numOfNominee = 0;
+                hasNominee = false;
 
             }
         });
@@ -188,6 +190,7 @@ public class FragmentNomineeInfo extends Fragment {
                 initComboBox(cmbN1_gender, listNomineeGender);
                 initComboBox(cmbN1_occupation, listNomineeOccupation);
                 numOfNominee = 1;
+                hasNominee = true;
             }
         });
 
@@ -458,8 +461,13 @@ public class FragmentNomineeInfo extends Fragment {
                 "Disabled or chronically ill ",
                 "Retired or not working ",
                 "Other (specify) "));
+    }
 
-
+    public static int getNumOfNominee() {
+        return numOfNominee;
+    }
+    public static boolean getHasNominee(){
+        return hasNominee;
     }
 
 

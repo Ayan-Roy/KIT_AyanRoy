@@ -21,6 +21,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ayanicsoft.kit_ayanroy.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -40,7 +41,7 @@ public class FragmentPersonalInfo extends Fragment {
     AutoCompleteTextView cmbResRelationToHead, cmbResGender, cmbResMaritalSts, cmbResLegalSts, cmbMainIncomeSource,
             cmbCurrency, cmbReason, cmbState, cmbCountry, cmbPayam, cmbBoma;
 
-    int[] editTextIds = {
+    static int[] editTextIds = {
             R.id.editText0, R.id.editText1, R.id.editText2, R.id.editText3, R.id.editText4, R.id.editText5,
             R.id.editText6, R.id.editText7, R.id.editText8, R.id.editText9, R.id.editText10, R.id.editText11,
             R.id.editText12, R.id.editText13, R.id.editText14, R.id.editText15, R.id.editText16, R.id.editText17,
@@ -51,7 +52,7 @@ public class FragmentPersonalInfo extends Fragment {
 
     TextView tvTotalMember;
 
-    RadioButton supportType_public, supportType_direct;
+    RadioButton supportType_public, supportType_direct, canReadWrite_yes, canReadWrite_no;
     Context context;
 
     ArrayList<String> listResRelationship;
@@ -67,7 +68,7 @@ public class FragmentPersonalInfo extends Fragment {
     ArrayList<String> listPayam;
     ArrayList<String> listBoma;
     ArrayList<TextInputEditText> listHouseSize;
-    View view;
+    static View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -113,6 +114,8 @@ public class FragmentPersonalInfo extends Fragment {
 
         supportType_public = view.findViewById(R.id.rBtn_sType_public);
         supportType_direct = view.findViewById(R.id.rBtn_sType_direct);
+        canReadWrite_yes = view.findViewById(R.id.rbtn_read_write_yes);
+        canReadWrite_no = view.findViewById(R.id.rbtn_read_write_no);
 
         tvTotalMember = view.findViewById(R.id.tv_ttl_member);
 
@@ -129,7 +132,6 @@ public class FragmentPersonalInfo extends Fragment {
         }
 
 
-
         cmdDataInit();
 
 
@@ -143,16 +145,19 @@ public class FragmentPersonalInfo extends Fragment {
 
 
         setActionListener();
+        // clearAllData();
         return view;
     }
 
     private void houseHoleTableCellListener(TextInputEditText editText) {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
 
             @Override
             public void afterTextChanged(Editable s) {
@@ -163,7 +168,7 @@ public class FragmentPersonalInfo extends Fragment {
     }
 
     private void calculateSum() {
-       int  totalSum = 1;
+        int totalSum = 1;
         for (TextInputEditText editText : listHouseSize) {
             String valueStr = editText.getText().toString();
             if (!valueStr.isEmpty()) {
@@ -172,7 +177,7 @@ public class FragmentPersonalInfo extends Fragment {
             }
         }
         // Update TextView with the sum
-        tvTotalMember.setText(""+totalSum);
+        tvTotalMember.setText("" + totalSum);
     }
 
 
@@ -213,7 +218,7 @@ public class FragmentPersonalInfo extends Fragment {
         supportType_public.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                supportType_direct.setSelected(false);
+                supportType_direct.setChecked(false);
                 initComboBox(cmbReason, listReason_public);
             }
         });
@@ -222,7 +227,7 @@ public class FragmentPersonalInfo extends Fragment {
             @Override
             public void onClick(View v) {
 
-                supportType_public.setSelected(false);
+                supportType_public.setChecked(false);
                 initComboBox(cmbReason, listReason_direct);
             }
         });
@@ -230,7 +235,7 @@ public class FragmentPersonalInfo extends Fragment {
         cmbState.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position!=0){
+                if (position != 0) {
                     initComboBox(cmbCountry, listCountry);
                 }
             }
@@ -239,7 +244,7 @@ public class FragmentPersonalInfo extends Fragment {
         cmbCountry.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position!=0){
+                if (position != 0) {
                     initComboBox(cmbPayam, listPayam);
                 }
             }
@@ -248,17 +253,29 @@ public class FragmentPersonalInfo extends Fragment {
         cmbPayam.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position!=0){
+                if (position != 0) {
                     initComboBox(cmbBoma, listBoma);
                 }
             }
         });
 
+        canReadWrite_yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                canReadWrite_no.setChecked(false);
+            }
+        });
+        canReadWrite_no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                canReadWrite_yes.setChecked(false);
+            }
+        });
+
+
 
         setupEditTextListeners();
     }
-
-
 
 
     private void setupEditTextListeners() {
@@ -267,10 +284,12 @@ public class FragmentPersonalInfo extends Fragment {
             TextInputEditText editText = view.findViewById(editTextId);
             editText.addTextChangedListener(new TextWatcher() {
                 @Override
-                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                }
 
                 @Override
-                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                }
 
                 @Override
                 public void afterTextChanged(Editable editable) {
@@ -288,7 +307,7 @@ public class FragmentPersonalInfo extends Fragment {
             int value = parseEditTextValue(editText.getText().toString());
             total += value;
         }
-        tvTotalMember.setText(total+"");
+        tvTotalMember.setText(total + "");
     }
 
     private int parseEditTextValue(String value) {
@@ -414,11 +433,34 @@ public class FragmentPersonalInfo extends Fragment {
 
     }
 
-
     private void initComboBox(AutoCompleteTextView popupEmailComboBox, ArrayList<String> contentList) {
-
 
         ArrayAdapter<String> adapterItems = new ArrayAdapter<String>(context, R.layout.combo_item, contentList);
         popupEmailComboBox.setAdapter(adapterItems);
     }
+
+    public static void clearAllData() {
+
+        int[] textViewIds = {
+                R.id.tv_pInfo_fName, R.id.tv_pInfo_mName, R.id.tv_pInfo_lName,
+                R.id.tv_pInfo_age, R.id.tv_pInfo_res_id, R.id.tv_pInfo_res_phone,
+                R.id.tv_pInfo_res_sp_fName, R.id.tv_pInfo_res_sp_mName,
+                R.id.tv_pInfo_res_sp_lName, R.id.tv_sCriteria_specific_income_src,
+                R.id.tv_sCriteria_avg_income, R.id.tv_sCriteria_gps_lat,
+                R.id.tv_sCriteria_gps_long
+        };
+
+
+        for (int textId : textViewIds) {
+            TextInputEditText editText = view.findViewById(textId);
+            Log.e(TAG, "clearAllData: " + editText);
+            editText.setText("");
+        }
+
+        for (int editTextId : editTextIds) {
+            TextInputEditText editText = view.findViewById(editTextId);
+            editText.setText("");
+        }
+    }
+
 }

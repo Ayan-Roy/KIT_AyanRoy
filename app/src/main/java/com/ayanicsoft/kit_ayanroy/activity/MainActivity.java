@@ -7,9 +7,12 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.ayanicsoft.kit_ayanroy.R;
 import com.ayanicsoft.kit_ayanroy.adapter.ViewPagerAdapter;
+import com.ayanicsoft.kit_ayanroy.fragment.FragmentNomineeInfo;
+import com.ayanicsoft.kit_ayanroy.fragment.FragmentPersonalInfo;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,13 +40,23 @@ public class MainActivity extends AppCompatActivity {
         mainViewPager.setCurrentItem(0);
         mainViewPager.setUserInputEnabled(false);
 
-
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mainViewPager.getCurrentItem() == 0){
+                if (mainViewPager.getCurrentItem() == 0) {
                     mainViewPager.setCurrentItem(1);
                     btnPrevious.setVisibility(View.VISIBLE);
+                } else {
+                    if (FragmentNomineeInfo.getHasNominee()) {
+                        int numOfNominee = FragmentNomineeInfo.getNumOfNominee();
+                        if (numOfNominee < 2) {
+                            Toast.makeText(MainActivity.this, "You must add minimum 2 Nominees", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "Everything is ok. Ready for fetch all Data..", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(MainActivity.this, "Everything is ok. Ready for fetch all Data..", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -62,6 +75,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        btnClearAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentPersonalInfo.clearAllData();
+            }
+        });
 
     }
 }
