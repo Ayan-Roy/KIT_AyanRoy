@@ -1,4 +1,4 @@
-package com.ayanicsoft.kit_ayanroy;
+package com.ayanicsoft.kit_ayanroy.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.ayanicsoft.kit_ayanroy.R;
+import com.ayanicsoft.kit_ayanroy.adapter.ViewPagerAdapter;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {

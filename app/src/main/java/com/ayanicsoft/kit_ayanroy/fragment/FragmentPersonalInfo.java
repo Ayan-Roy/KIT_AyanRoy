@@ -1,4 +1,4 @@
-package com.ayanicsoft.kit_ayanroy;
+package com.ayanicsoft.kit_ayanroy.fragment;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
@@ -22,6 +22,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.ayanicsoft.kit_ayanroy.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 

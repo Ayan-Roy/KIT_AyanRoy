@@ -1,4 +1,4 @@
-package com.ayanicsoft.kit_ayanroy;
+package com.ayanicsoft.kit_ayanroy.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.ayanicsoft.kit_ayanroy.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
