@@ -350,7 +350,7 @@ public class FragmentPersonalInfo extends Fragment {
                 "NORTH RENK",
                 "SOUTH RENK"));
 
-        listPayam = new ArrayList<>(Arrays.asList("Select Boma",
+        listBoma = new ArrayList<>(Arrays.asList("Select Boma",
                 "BABANIS",
                 "HBOUBDIT",
                 "CHAMMEDI",
