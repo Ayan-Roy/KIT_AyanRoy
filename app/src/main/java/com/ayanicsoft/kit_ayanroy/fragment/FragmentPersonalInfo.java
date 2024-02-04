@@ -40,6 +40,15 @@ public class FragmentPersonalInfo extends Fragment {
     AutoCompleteTextView cmbResRelationToHead, cmbResGender, cmbResMaritalSts, cmbResLegalSts, cmbMainIncomeSource,
             cmbCurrency, cmbReason, cmbState, cmbCountry, cmbPayam, cmbBoma;
 
+    int[] editTextIds = {
+            R.id.editText0, R.id.editText1, R.id.editText2, R.id.editText3, R.id.editText4, R.id.editText5,
+            R.id.editText6, R.id.editText7, R.id.editText8, R.id.editText9, R.id.editText10, R.id.editText11,
+            R.id.editText12, R.id.editText13, R.id.editText14, R.id.editText15, R.id.editText16, R.id.editText17,
+            R.id.editText18, R.id.editText19, R.id.editText20, R.id.editText21, R.id.editText22, R.id.editText23,
+            R.id.editText24, R.id.editText25, R.id.editText26, R.id.editText27, R.id.editText28, R.id.editText29,
+            R.id.editText30, R.id.editText31, R.id.editText32, R.id.editText33, R.id.editText34, R.id.editText35
+    };
+
     TextView tvTotalMember;
 
     RadioButton supportType_public, supportType_direct;
@@ -58,12 +67,13 @@ public class FragmentPersonalInfo extends Fragment {
     ArrayList<String> listPayam;
     ArrayList<String> listBoma;
     ArrayList<TextInputEditText> listHouseSize;
+    View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_personal_info, container, false);
+        view = inflater.inflate(R.layout.fragment_personal_info, container, false);
 
         context = getContext();
 
@@ -244,7 +254,51 @@ public class FragmentPersonalInfo extends Fragment {
             }
         });
 
+
+        setupEditTextListeners();
     }
+
+
+
+
+    private void setupEditTextListeners() {
+
+        for (int editTextId : editTextIds) {
+            TextInputEditText editText = view.findViewById(editTextId);
+            editText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+                @Override
+                public void afterTextChanged(Editable editable) {
+                    calculateTotal();
+                }
+            });
+        }
+    }
+
+    private void calculateTotal() {
+        int total = 1; //including me
+
+        for (int editTextId : editTextIds) {
+            TextInputEditText editText = view.findViewById(editTextId);
+            int value = parseEditTextValue(editText.getText().toString());
+            total += value;
+        }
+        tvTotalMember.setText(total+"");
+    }
+
+    private int parseEditTextValue(String value) {
+        try {
+            return Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
+
 
     private void cmdDataInit() {
 

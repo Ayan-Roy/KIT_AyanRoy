@@ -798,7 +798,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/editText4"
                         style="@style/TextInputLayoutStyle"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
@@ -1033,13 +1032,13 @@
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_height="65dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="6.60"
+                    android:paddingTop="25dp"
                     android:background="@drawable/border_right_and_bottom"
-                    android:gravity="center"
-                    android:paddingEnd="10dp"
-                    android:text="Household Size (including yourself)"
+                    android:paddingEnd="20dp"
                     android:textAlignment="textEnd"
+                    android:text="Household Size (including yourself)"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     android:textStyle="bold" />
